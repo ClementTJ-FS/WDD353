@@ -10,6 +10,7 @@ Assignments include creating a simple grader console application and setting up 
 - Reorganized file structure.
 - Followed lectures, created example files.
 - Completed Assignment 1 python part.
+- Completed Ruby part.
 
 
 ## Week 1 - 
