@@ -40,7 +40,7 @@ class Grader:
 
   #function to output result.
   def outputGrade(self):
-      print("- Student Name: " + self.student + "\n- Assignment: " + self.assignment + "\n- Grade: " + self.grade) 
+      print("\n- Student Name: " + self.student + "\n- Assignment: " + self.assignment + "\n- Grade: " + self.grade) 
 
 #create object
 grader1 = Grader()

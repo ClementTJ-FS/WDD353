@@ -11,6 +11,8 @@ Assignments include creating a simple grader console application and setting up 
 - Followed lectures, created example files.
 - Completed Assignment 1 python part.
 - Completed Ruby part.
+- Completed NodeJS part.
+- Formatting - Completed Assignment 1 code.
 
 
 ## Week 1 - 

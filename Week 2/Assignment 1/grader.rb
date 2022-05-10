@@ -10,7 +10,7 @@ class Grader
 
   # function to output data
   def outputGrade
-    return "\nStudent Name: "+ @student +"Assignment: "+ @assignment +"Grade: "+@grade
+    return "\n- Student Name: "+ @student +"- Assignment: "+ @assignment +"- Grade: "+@grade
   end
 
   #function to get the score, validate and convert to letter. 
