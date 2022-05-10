@@ -13,6 +13,7 @@ Assignments include creating a simple grader console application and setting up 
 - Completed Ruby part.
 - Completed NodeJS part.
 - Formatting - Completed Assignment 1 code.
+- Fixed white space validation in Node file.
 
 
 ## Week 1 - 

@@ -13,7 +13,8 @@ class Grader {
         rl.question("Enter Score: ", (score) => {
           //check if score is valid, if not create and use prompt.
           if (
-            !parseFloat(score) ||
+            isNaN(score) ||
+            score.trim() == "" ||
             parseFloat(score) < 0 ||
             parseFloat(score) > 100
           ) {
@@ -24,7 +25,8 @@ class Grader {
             //read new line input, recheck.
             rl.on("line", (score) => {
               if (
-                !parseFloat(score) ||
+                isNaN(score) ||
+                score.trim() == "" ||
                 parseFloat(score) < 0 ||
                 parseFloat(score) > 100
               ) {
