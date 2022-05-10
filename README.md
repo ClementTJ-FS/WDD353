@@ -1,5 +1,17 @@
 # WDD353
 ### Server Side Languages
+
+## Week 2 - 
+This week we learn a bit more about Python, Ruby and Node. 
+
+Assignments include creating a simple grader console application and setting up a static web server.
+
+### Changes
+- Reorganized file structure.
+- Followed lectures, created example files.
+- Completed Assignment 1 python part.
+
+
 ## Week 1 - 
 This is the introduction week to WDD353. 
 
