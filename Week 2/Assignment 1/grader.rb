@@ -19,9 +19,9 @@ class Grader
     #gets score as float, if not float, sets to false.
     score = Float(gets) rescue false
 
-    #loop for valid input, if not false, and between 0 and 100
+    #loop for valid input, if not false, or between 0 and 100
     while !score or score > 100 or score < 0 do
-      puts "Please only enter a number between 0 and 100"
+      puts "Please only enter a number between 0 and 100."
       puts "Enter Score: "
       score = Float(gets) rescue false
     end
