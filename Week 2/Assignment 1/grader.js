@@ -66,4 +66,4 @@ class Grader {
 }
 
 //instantiate object
-g = new Grader();
+const g = new Grader();

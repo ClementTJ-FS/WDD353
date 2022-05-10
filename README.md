@@ -14,6 +14,7 @@ Assignments include creating a simple grader console application and setting up 
 - Completed NodeJS part.
 - Formatting - Completed Assignment 1 code.
 - Fixed white space validation in Node file.
+- Finished web server lecture.
 
 
 ## Week 1 - 
