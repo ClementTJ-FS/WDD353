@@ -17,6 +17,13 @@ Assignments include creating a simple grader console application and setting up 
 - Finished web server lecture.
 - Began work on Assignment 2.
 - Created index, imported css.
+- Created about page.
+- Created contact page.
+- Created projects page.
+- Imported assets and js.
+- Update server.js with new pages.
+- Modified nav to link to pages.
+- Fixed about link on index.
 
 
 ## Week 1 - 
