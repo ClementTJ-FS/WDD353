@@ -24,6 +24,8 @@ Assignments include creating a simple grader console application and setting up 
 - Update server.js with new pages.
 - Modified nav to link to pages.
 - Fixed about link on index.
+- Changed bg colors to help with visuals.
+- Changed text color on featured project element.
 
 
 ## Week 1 - 
