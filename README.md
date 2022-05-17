@@ -1,6 +1,18 @@
 # WDD353
 ### Server Side Languages
 
+## Week 3 - 
+This week we learn about dynamic websites, EJS, Sync/Async, and login/registration forms and validation.
+
+Assignments include creating a registration form and validating with regex, Sync/Async, and a login form.
+### Changes - 
+- Created assignment 3 files.
+- Added registration page.
+- Added registration form.
+- Created form js.
+- Added age dropdown options.
+
+
 ## Week 2 - 
 This week we learn a bit more about Python, Ruby and Node. 
 
