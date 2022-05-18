@@ -16,6 +16,7 @@ Assignments include creating a registration form and validating with regex, Sync
 - Added overall status.
 - Fixed error various error messages.
 - Fixed some styling.
+- Values will now repopulate on form failure.
 
 ## Week 2 - 
 This week we learn a bit more about Python, Ruby and Node. 

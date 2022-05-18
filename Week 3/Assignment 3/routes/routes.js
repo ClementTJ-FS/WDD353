@@ -39,6 +39,7 @@ router.get("/register", (req, res) => {
 });
 
 router.post("/register", (req, res) => {
+  //set the values from form
   const fName = req.body.fName;
   const lName = req.body.lName;
   const address = req.body.address;
@@ -46,19 +47,23 @@ router.post("/register", (req, res) => {
   const state = req.body.state;
   const zip = req.body.zip;
   const age = req.body.age;
-  const gender = req.body.gender;
-  const consent = req.body.consent;
+  let gender = req.body.gender;
+  let consent = req.body.consent;
   const bio = req.body.bio;
 
+  //the regexs
   const textRegex = /^[a-z]+$/i;
   const addRegex = /^[a-z0-9\s,.'-]{3,}$/i;
   const stateRegex = 	
   /^((A[LKSZR])|(C[AOT])|(D[EC])|(F[ML])|(G[AU])|(HI)|(I[DLNA])|(K[SY])|(LA)|(M[EHDAINSOT])|(N[EVHJMYCD])|(MP)|(O[HKR])|(P[WAR])|(RI)|(S[CD])|(T[NX])|(UT)|(V[TIA])|(W[AVIY]))$/i;
   const zipRegex = /(^\d{5}$)|(^\d{5}-\d{4}$)/;
 
+  //objects/vars to hold data
   let errors = {};
   let status 
-
+  let values = {fName,lName,address,city,state,zip,age,gender,consent,bio}
+  
+  //validations
   if (textRegex.test(fName) && fName.length >= 2) {
     delete errors.fNameMsg
   } else {
@@ -74,7 +79,7 @@ router.post("/register", (req, res) => {
   } else {
     errors.addressMsg = "An address name is required.";
   }
-  if (textRegex.test(city) && city.length >= 2) {
+  if (addRegex.test(city) && city.length >= 2) {
     delete errors.cityMsg 
   } else {
     errors.cityMsg = "A city is required. (Minimum 2 characters)";
@@ -89,7 +94,9 @@ router.post("/register", (req, res) => {
   } else {
     errors.zipMsg = "A valid zip code is required.";
   }
-  if (age != undefined) {
+  if ( age === "Age") {
+    errors.ageMsg = "An age is required.";
+  } else if(age != undefined){
     delete errors.ageMsg 
   } else {
     errors.ageMsg = "An age is required.";
@@ -110,21 +117,31 @@ router.post("/register", (req, res) => {
     errors.bioMsg = "A bio is required. (Minimum 10 characters)";
   }
 
+  //set alert 
   const isEmpty = Object.keys(errors).length === 0;
   let alert = "";
   if (isEmpty) {
     status = "Registration Successful!"
     alert = "alert alert-success"
+    values = {}
+    consent = ""
+    gender = ""
+    bio = ""
   }else if(!isEmpty){
     status = "Registration Failed!"
     alert = "alert alert-danger"
   }
   
+  //render page again
   res.render("register", {
     pagename: "register",
     errors: errors,
     status: status,
     alert: alert,
+    values: values,
+    gender: gender,
+    consent: consent,
+    bio: bio,
   });
 });
 

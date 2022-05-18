@@ -65,6 +65,9 @@
                   type="text"
                   placeholder="Enter your first name..."
                   name="fName"
+                  <% if(typeof(values)!="undefined"){ %>
+                value='<%= values.fName %>' 
+                <%}%> 
                 />
                 <label for="fname">First name</label>
                 <div class="invalid-feedback">
@@ -80,6 +83,9 @@
                   type="text"
                   placeholder="Enter your last name..."
                   name="lName"
+                  <% if(typeof(values)!="undefined"){ %>
+                value='<%= values.lName %>' 
+                <%}%> 
                 />
                 <label for="lname">Last name</label>
                 <div class="invalid-feedback">
@@ -95,6 +101,9 @@
                   type="text"
                   placeholder="Enter your address..."
                   name="address"
+                  <% if(typeof(values)!="undefined"){ %>
+                value='<%= values.address %>' 
+                <%}%> 
                 />
                 <label for="address">Address</label>
                 <div class="invalid-feedback">
@@ -110,6 +119,9 @@
                   type="text"
                   placeholder="Enter your city..."
                   name="city"
+                  <% if(typeof(values)!="undefined"){ %>
+                value='<%= values.city %>' 
+                <%}%> 
                 />
                 <label for="city">City</label>
                 <div class="invalid-feedback">
@@ -125,6 +137,9 @@
                   type="text"
                   placeholder="Enter your state..."
                   name="state"
+                  <% if(typeof(values)!="undefined"){ %>
+                value='<%= values.state %>' 
+                <%}%> 
                 />
                 <label for="state">State</label>
                 <div class="invalid-feedback">
@@ -141,6 +156,9 @@
                   maxlength="5"
                   placeholder="Enter your zipcode..."
                   name="zip"
+                  <% if(typeof(values)!="undefined"){ %>
+                value='<%= values.zip %>' 
+                <%}%> 
                 />
                 <label for="zip">Zipcode</label>
                 <div class="invalid-feedback">
@@ -151,7 +169,18 @@
               </div>
               <div class="form-floating mb-3">
                 <select id="age" name="age">
-                  <option disabled selected>Age</option>
+                  <option
+                    selected
+                    <% if(typeof(values)!="undefined"){ %>
+                    value='<%= values.age %>' 
+                    <%}%> 
+                    > 
+                    <% if(typeof(values)!="undefined"){ %>
+                      <%= values.age %> 
+                      <%} else {%>
+                        Age
+                        <% } %>  
+                  </option>
                 </select>
                 <div class="invalid-feedback">
                   <% if(typeof(errors) != "undefined"){ %>
@@ -163,23 +192,17 @@
                 <fieldset>
                   <legend>Gender</legend>
                   <div class="form-check form-check-inline">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="gender"
-                      id="male"
-                      value="male"
+                    <input class="form-check-input" type="radio" name="gender"
+                    id="male" value="male" 
+                    <%= locals.gender == "male" ?
+                    "checked" : '' %>
                     />
                     <label class="form-check-label" for="male">Male</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="gender"
-                      id="female"
-                      value="female"
-                    />
+                    <input class="form-check-input" type="radio" name="gender"
+                    id="female" value="female" <%= locals.gender == "female" ?
+                   "checked" : '' %> />
                     <label class="form-check-label" for="female">Female</label>
                   </div>
                   <div class="invalid-feedback">
@@ -192,12 +215,8 @@
               <div class="form-floating mb-3">
                 <div class="form-check form-check-inline">
                   <label class="form-check-label" for="consent">Consent?</label>
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    name="consent"
-                    id="consent"
-                  />
+                  <input class="form-check-input" type="checkbox" name="consent"
+                  id="consent" <%= locals.consent == "on" ? 'checked' : '' %> />
                 </div>
                 <div class="invalid-feedback">
                   <% if(typeof(errors) != "undefined"){ %>
@@ -213,7 +232,7 @@
                   placeholder="Enter your bio here..."
                   style="height: 10rem"
                   name="bio"
-                ></textarea>
+                ><%= locals.bio %></textarea>
                 <label for="bio">Bio</label>
                 <div class="invalid-feedback">
                   <% if(typeof(errors) != "undefined"){ %>
