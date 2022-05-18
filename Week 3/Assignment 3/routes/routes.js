@@ -96,13 +96,11 @@ router.post("/register", (req, res) => {
   }
   if (gender === "male" || gender === "female") {
     delete errors.genderMsg 
-    console.log(gender);
   } else {
     errors.genderMsg = "A gender is required.";
   }
   if (consent === "on") {
     delete errors.consentMsg
-    
   } else {
     errors.consentMsg = "Consent is required.";
   }
@@ -113,16 +111,20 @@ router.post("/register", (req, res) => {
   }
 
   const isEmpty = Object.keys(errors).length === 0;
+  let alert = "";
   if (isEmpty) {
     status = "Registration Successful!"
+    alert = "alert alert-success"
   }else if(!isEmpty){
     status = "Registration Failed!"
+    alert = "alert alert-danger"
   }
-  console.log(errors);
+  
   res.render("register", {
     pagename: "register",
     errors: errors,
     status: status,
+    alert: alert,
   });
 });
 
