@@ -25,7 +25,7 @@ app.use((req, res, next) => {
 app.set("view engine", "ejs");
 app.engine("ejs", require("ejs").__express);
 
-//statis site middleware
+//static site middleware
 app.use(express.static("public"));
 app.use(express.static("views"));
 
