@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const router = require("../routes/routes")
 
+
 app.use(express.urlencoded({ extended: true }));
 
 //all requests will handle json
@@ -45,5 +46,7 @@ app.use((error, req, res, next) => {
     },
   });
 });
+
+
 
 module.exports = app;

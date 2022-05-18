@@ -44,9 +44,15 @@
             <hr class="divider" />
           </div>
         </div>
+        <div>
+            <% if(typeof(status) != "undefined") { %>
+                <span><%= status %> </span>
+            <%}%>
+          
+        </div>
         <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
           <div class="col-lg-6">
-            <form id="registerForm">
+            <form id="registerForm" action="/register" method="POST">
               <!-- Name input-->
               <div class="form-floating mb-3">
                 <input
@@ -54,10 +60,14 @@
                   id="fname"
                   type="text"
                   placeholder="Enter your first name..."
-                  required
+                  name="fName"
                 />
                 <label for="fname">First name</label>
-                <div class="invalid-feedback">A first name is required.</div>
+                <div class="invalid-feedback">
+                  <% if(typeof(errors) != "undefined"){ %>
+                  <span><%= errors.fNameMsg %></span>
+                  <% } %>
+                </div>
               </div>
               <div class="form-floating mb-3">
                 <input
@@ -65,10 +75,14 @@
                   id="lname"
                   type="text"
                   placeholder="Enter your last name..."
-                  required
+                  name="lName"
                 />
                 <label for="lname">Last name</label>
-                <div class="invalid-feedback">A last name is required.</div>
+                <div class="invalid-feedback">
+                  <% if(typeof(errors) != "undefined"){ %>
+                  <span><%= errors.lNameMsg %></span>
+                  <% } %>
+                </div>
               </div>
               <div class="form-floating mb-3">
                 <input
@@ -76,10 +90,14 @@
                   id="address"
                   type="text"
                   placeholder="Enter your address..."
-                  required
+                  name="address"
                 />
                 <label for="address">Address</label>
-                <div class="invalid-feedback">An address is required.</div>
+                <div class="invalid-feedback">
+                  <% if(typeof(errors) != "undefined"){ %>
+                  <span><%= errors.addressMsg %></span>
+                  <% } %>
+                </div>
               </div>
               <div class="form-floating mb-3">
                 <input
@@ -87,10 +105,14 @@
                   id="city"
                   type="text"
                   placeholder="Enter your city..."
-                  required
+                  name="city"
                 />
                 <label for="city">City</label>
-                <div class="invalid-feedback">A city is required.</div>
+                <div class="invalid-feedback">
+                  <% if(typeof(errors) != "undefined"){ %>
+                  <span><%= errors.cityMsg %></span>
+                  <% } %>
+                </div>
               </div>
               <div class="form-floating mb-3">
                 <input
@@ -98,10 +120,14 @@
                   id="state"
                   type="text"
                   placeholder="Enter your state..."
-                  required
+                  name="state"
                 />
                 <label for="state">State</label>
-                <div class="invalid-feedback">A state is required.</div>
+                <div class="invalid-feedback">
+                  <% if(typeof(errors) != "undefined"){ %>
+                  <span><%= errors.stateMsg %></span>
+                  <% } %>
+                </div>
               </div>
               <div class="form-floating mb-3">
                 <input
@@ -110,58 +136,64 @@
                   type="number"
                   maxlength="5"
                   placeholder="Enter your zipcode..."
-                  required
+                  name="zip"
                 />
                 <label for="zip">Zipcode</label>
-                <div class="invalid-feedback">A zipcode is required.</div>
+                <div class="invalid-feedback">
+                  <% if(typeof(errors) != "undefined"){ %>
+                  <span><%= errors.zipMsg %></span>
+                  <% } %>
+                </div>
               </div>
               <div class="form-floating mb-3">
-                <select id="age" required>
+                <select id="age" name="age">
                   <option disabled selected>Age</option>
                 </select>
-                <div class="invalid-feedback">An age is required.</div>
+                <div class="invalid-feedback">
+                  <% if(typeof(errors) != "undefined"){ %>
+                  <span><%= errors.ageMsg %></span>
+                  <% } %>
+                </div>
               </div>
               <div class="form-floating mb-3">
                 <fieldset>
-                    <legend>Gender</legend>
-                  <label for="male">Male</label>
-                  <input type="radio" id="male" name="gender" value="male" />
-                  <label for="female">Female</label>
-                  <input
-                    type="radio"
-                    id="female"
-                    name="gender"
-                    value="female"
-                  />
+                  <legend>Gender</legend>
+                  <label class="radio-inline"
+                    ><input type="radio" name="gender" value="male" />Male</label
+                  >
+                  <label class="radio-inline"
+                    ><input type="radio" name="gender" value="female" />Female</label
+                  >
                 </fieldset>
-                <div class="invalid-feedback">A gender is required.</div>
-              </div>
-              <div class="form-floating mb-3">
-                  <label for="consent">Consent?</label>
-                  <input type="checkbox" name="consent" id="consent" required>
-              </div>
-              <div class="form-floating mb-3">
-                <textarea class="form-control" id="bio" type="text" placeholder="Enter your bio here..." style="height: 10rem" required></textarea>
-                <label for="bio">Bio</label>
-                <div class="invalid-feedback">A bio is required.</div>
-            </div>
-
-              <!-- Submit success message-->
-              <!---->
-              <!-- This is what your users will see when the form-->
-              <!-- has successfully submitted-->
-              <div class="d-none" id="submitSuccessMessage">
-                <div class="text-center mb-3">
-                  <div class="fw-bolder">Form submission successful!</div>
+                <div class="invalid-feedback">
+                  <% if(typeof(errors) != "undefined"){ %>
+                  <span><%= errors.genderMsg %></span>
+                  <% } %>
                 </div>
               </div>
-              <!-- Submit error message-->
-              <!---->
-              <!-- This is what your users will see when there is-->
-              <!-- an error submitting the form-->
-              <div class="d-none" id="submitErrorMessage">
-                <div class="text-center text-danger mb-3">
-                  There was an error registering!
+              <div class="form-floating mb-3">
+                <label for="consent">Consent?</label>
+                <input type="checkbox" name="consent" id="consent" />
+                <div class="invalid-feedback">
+                    <% if(typeof(errors) != "undefined"){ %>
+                    <span><%= errors.consentMsg %></span>
+                    <% } %>
+                  </div>
+              </div>
+              <div class="form-floating mb-3">
+                <textarea
+                  class="form-control"
+                  id="bio"
+                  type="text"
+                  placeholder="Enter your bio here..."
+                  style="height: 10rem"
+                  name="bio"
+                ></textarea>
+                <label for="bio">Bio</label>
+                <div class="invalid-feedback">
+                  <% if(typeof(errors) != "undefined"){ %>
+                  <span><%= errors.bioMsg %></span>
+                  <% } %>
                 </div>
               </div>
               <!-- Submit Button-->
@@ -186,6 +218,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- SimpleLightbox plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
-
   </body>
 </html>

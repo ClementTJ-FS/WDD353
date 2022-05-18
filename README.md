@@ -6,12 +6,15 @@ This week we learn about dynamic websites, EJS, Sync/Async, and login/registrati
 
 Assignments include creating a registration form and validating with regex, Sync/Async, and a login form.
 ### Changes - 
+- Finished 1st lecture.
 - Created assignment 3 files.
 - Added registration page.
 - Added registration form.
 - Created form js.
 - Added age dropdown options.
-
+- Implemented regex validation for registration POST.
+- Added overall status.
+- Fixed error various error messages.
 
 ## Week 2 - 
 This week we learn a bit more about Python, Ruby and Node. 
