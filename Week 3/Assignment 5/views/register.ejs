@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title><%-pagename%></title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <!-- Bootstrap Icons-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- Google fonts-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- SimpleLightbox plugin CSS-->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css"
+      rel="stylesheet"
+    />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body id="page-top">
+    <%-include("includes/nav")%>
+    <section class="page-section" id="register">
+      <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-lg-8 col-xl-6 text-center">
+            <h2 class="mt-0">Register Now</h2>
+            <hr class="divider" />
+            <div class="text-center mb-5">
+              <% if(typeof(alert) != "undefined") { %>
+              <div class="<%= alert %>" role="alert">
+                <% if(typeof(status) != "undefined") { %>
+                <span><%= status %> </span>
+                <% } %>
+              </div>
+              <% } %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
+          <div class="col-lg-6">
+            <form id="registerForm" action="/register" method="POST">
+              <!-- Name input-->
+              <div class="form-floating mb-3">
+                <input
+                  class="form-control"
+                  id="fname"
+                  type="text"
+                  placeholder="Enter your first name..."
+                  name="fName"
+                  <% if(typeof(values)!="undefined"){ %>
+                value='<%= values.fName %>' 
+                <%}%> 
+                />
+                <label for="fname">First name</label>
+                <div class="invalid-feedback">
+                  <% if(typeof(errors) != "undefined"){ %>
+                  <span><%= errors.fNameMsg %></span>
+                  <% } %>
+                </div>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  class="form-control"
+                  id="lname"
+                  type="text"
+                  placeholder="Enter your last name..."
+                  name="lName"
+                  <% if(typeof(values)!="undefined"){ %>
+                value='<%= values.lName %>' 
+                <%}%> 
+                />
+                <label for="lname">Last name</label>
+                <div class="invalid-feedback">
+                  <% if(typeof(errors) != "undefined"){ %>
+                  <span><%= errors.lNameMsg %></span>
+                  <% } %>
+                </div>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  class="form-control"
+                  id="address"
+                  type="text"
+                  placeholder="Enter your address..."
+                  name="address"
+                  <% if(typeof(values)!="undefined"){ %>
+                value='<%= values.address %>' 
+                <%}%> 
+                />
+                <label for="address">Address</label>
+                <div class="invalid-feedback">
+                  <% if(typeof(errors) != "undefined"){ %>
+                  <span><%= errors.addressMsg %></span>
+                  <% } %>
+                </div>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  class="form-control"
+                  id="city"
+                  type="text"
+                  placeholder="Enter your city..."
+                  name="city"
+                  <% if(typeof(values)!="undefined"){ %>
+                value='<%= values.city %>' 
+                <%}%> 
+                />
+                <label for="city">City</label>
+                <div class="invalid-feedback">
+                  <% if(typeof(errors) != "undefined"){ %>
+                  <span><%= errors.cityMsg %></span>
+                  <% } %>
+                </div>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  class="form-control"
+                  id="state"
+                  type="text"
+                  placeholder="Enter your state..."
+                  name="state"
+                  <% if(typeof(values)!="undefined"){ %>
+                value='<%= values.state %>' 
+                <%}%> 
+                />
+                <label for="state">State</label>
+                <div class="invalid-feedback">
+                  <% if(typeof(errors) != "undefined"){ %>
+                  <span><%= errors.stateMsg %></span>
+                  <% } %>
+                </div>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  class="form-control"
+                  id="zip"
+                  type="number"
+                  maxlength="5"
+                  placeholder="Enter your zipcode..."
+                  name="zip"
+                  <% if(typeof(values)!="undefined"){ %>
+                value='<%= values.zip %>' 
+                <%}%> 
+                />
+                <label for="zip">Zipcode</label>
+                <div class="invalid-feedback">
+                  <% if(typeof(errors) != "undefined"){ %>
+                  <span><%= errors.zipMsg %></span>
+                  <% } %>
+                </div>
+              </div>
+              <div class="form-floating mb-3">
+                <select id="age" name="age">
+                  <option
+                    selected
+                    <% if(typeof(values)!="undefined"){ %>
+                    value='<%= values.age %>' 
+                    <%}%> 
+                    > 
+                    <% if(typeof(values)!="undefined"){ %>
+                      <%= values.age %> 
+                      <%} else {%>
+                        Age
+                        <% } %>  
+                  </option>
+                </select>
+                <div class="invalid-feedback">
+                  <% if(typeof(errors) != "undefined"){ %>
+                  <span><%= errors.ageMsg %></span>
+                  <% } %>
+                </div>
+              </div>
+              <div class="form-floating mb-3">
+                <fieldset>
+                  <legend>Gender</legend>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender"
+                    id="male" value="male" 
+                    <%= locals.gender == "male" ?
+                    "checked" : '' %>
+                    />
+                    <label class="form-check-label" for="male">Male</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender"
+                    id="female" value="female" <%= locals.gender == "female" ?
+                   "checked" : '' %> />
+                    <label class="form-check-label" for="female">Female</label>
+                  </div>
+                  <div class="invalid-feedback">
+                    <% if(typeof(errors) != "undefined"){ %>
+                    <span><%= errors.genderMsg %></span>
+                    <% } %>
+                  </div>
+                </fieldset>
+              </div>
+              <div class="form-floating mb-3">
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label" for="consent">Consent?</label>
+                  <input class="form-check-input" type="checkbox" name="consent"
+                  id="consent" <%= locals.consent == "on" ? 'checked' : '' %> />
+                </div>
+                <div class="invalid-feedback">
+                  <% if(typeof(errors) != "undefined"){ %>
+                  <span><%= errors.consentMsg %></span>
+                  <% } %>
+                </div>
+              </div>
+              <div class="form-floating mb-3">
+                <textarea
+                  class="form-control"
+                  id="bio"
+                  type="text"
+                  placeholder="Enter your bio here..."
+                  style="height: 10rem"
+                  name="bio"
+                ><%= locals.bio %></textarea>
+                <label for="bio">Bio</label>
+                <div class="invalid-feedback">
+                  <% if(typeof(errors) != "undefined"){ %>
+                  <span><%= errors.bioMsg %></span>
+                  <% } %>
+                </div>
+              </div>
+              <!-- Submit Button-->
+              <div class="d-grid">
+                <button
+                  class="btn btn-primary btn-xl"
+                  id="submitButton"
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <%-include("includes/footer")%>
+
+    <script src="/js/form.js"></script>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- SimpleLightbox plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+  </body>
+</html>
