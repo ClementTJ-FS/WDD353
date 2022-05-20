@@ -18,6 +18,7 @@ Assignments include creating a registration form and validating with regex, Sync
 - Fixed some styling.
 - Values will now repopulate on form failure.
 - Added/completed Assignment 4.
+- Removed unused code from assignment 3 routes.
 
 ## Week 2 - 
 This week we learn a bit more about Python, Ruby and Node. 
