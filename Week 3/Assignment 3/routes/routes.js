@@ -40,16 +40,16 @@ router.get("/register", (req, res) => {
 
 router.post("/register", (req, res) => {
   //set the values from form
-  const fName = req.body.fName;
-  const lName = req.body.lName;
-  const address = req.body.address;
-  const city = req.body.city;
-  const state = req.body.state;
-  const zip = req.body.zip;
-  const age = req.body.age;
-  let gender = req.body.gender;
-  let consent = req.body.consent;
-  const bio = req.body.bio;
+  let fName = req.body.fName,
+   lName = req.body.lName,
+   address = req.body.address,
+   city = req.body.city,
+   state = req.body.state,
+   zip = req.body.zip,
+   age = req.body.age,
+   gender = req.body.gender,
+   consent = req.body.consent,
+   bio = req.body.bio;
 
   //the regexs
   const textRegex = /^[a-z]+$/i;

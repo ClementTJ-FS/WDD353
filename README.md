@@ -23,6 +23,7 @@ Assignments include creating a registration form and validating with regex, Sync
 - Added login page.
 - Added session.
 - Fixed logout logic.
+- Fixed error in assignment 3.
 
 
 ## Week 2 - 
