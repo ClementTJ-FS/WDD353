@@ -1,6 +1,16 @@
 # WDD353
 ### Server Side Languages
 
+## Week 4 -
+This week we tie in the backend with the front end and learn about posting to the database.
+
+Assignments include a registration backend and a registration system that includes backend and frontend.
+
+### Changes - 
+- Completed restful write to backend lecture.
+- Added assignment 6 project files.
+- Refactored lecture code for assignment 6.
+- Completed assignment 6.
 ## Week 3 - 
 This week we learn about dynamic websites, EJS, Sync/Async, and login/registration forms and validation.
 

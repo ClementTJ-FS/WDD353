@@ -1,14 +1,16 @@
+const mongoose = require("mongoose");
 const express = require("express");
+const router = require("../api/routes/routes");
 const app = express();
-const router = require("../routes/routes")
 
+require("dotenv").config();
 
 app.use(express.urlencoded({ extended: true }));
 
 //all requests will handle json
 app.use(express.json());
 
-//handle cors
+//cors
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
@@ -21,15 +23,7 @@ app.use((req, res, next) => {
   next();
 });
 
-//middle for ejs
-app.set("view engine", "ejs");
-app.engine("ejs", require("ejs").__express);
-
-//static site middleware
-app.use(express.static("public"));
-app.use(express.static("views"));
-
-app.use("/", router)
+app.use("/", router);
 
 //error handling middleware
 app.use((req, res, next) => {
@@ -47,6 +41,12 @@ app.use((error, req, res, next) => {
   });
 });
 
-
+mongoose.connect(process.env.db_url, (err) => {
+  if (err) {
+    console.error("Error", err.message);
+  } else {
+    console.log("MongoDB connected successfully");
+  }
+});
 
 module.exports = app;
