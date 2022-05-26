@@ -190,7 +190,7 @@ router.get("/login", (req, res) => {
 router.post("/login", (req, res) => {
   let email = req.body.userId;
   let pw = req.body.pw;
-  let isValid = false;
+
 
   if (email.toLowerCase() != "mike@aol.com" || pw != "abc123") {
     res.render("login", {
