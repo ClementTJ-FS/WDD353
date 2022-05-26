@@ -12,7 +12,6 @@ router.get("/", () => {
 router.post("/login", (req, res) => {
   postLogin(req)
     .then((result) => {
-      console.log(result);
       res.status(200).json({
         message: "Login saved",
         status: 200,

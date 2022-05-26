@@ -11,6 +11,8 @@ Assignments include a registration backend and a registration system that includ
 - Added assignment 6 project files.
 - Refactored lecture code for assignment 6.
 - Completed assignment 6.
+- Completed lecture "Tie login frontend to backend".
+
 ## Week 3 - 
 This week we learn about dynamic websites, EJS, Sync/Async, and login/registration forms and validation.
 
