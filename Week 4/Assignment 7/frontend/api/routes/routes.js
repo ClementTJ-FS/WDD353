@@ -49,9 +49,9 @@ router.post("/register", async (req, res) => {
     age = req.body.age,
     gender = req.body.gender,
     consent = req.body.consent,
-    bio = req.body.bio;
+    bio = req.body.bio,
     //obj to hold data
-    let values = {
+    values = {
       fName,
       lName,
       address,
@@ -69,7 +69,7 @@ router.post("/register", async (req, res) => {
     alert = "";
   await getRegister(values)
     .then((result) => {
-      status = "Registration Successful!",
+      status = "Registration Successful.";
       alert = "alert alert-success";
       values = {};
       res.render("register", {
@@ -81,10 +81,9 @@ router.post("/register", async (req, res) => {
       });
     })
     .catch((err) => {
-      console.log(values);
-      errors = err.response.data.error.message,
-      status = "Registration Failed!",
-      alert = "alert alert-danger"
+      (errors = err.response.data.error.message),
+        (status = "Registration Failed."),
+        (alert = "alert alert-danger");
       res.render("register", {
         pagename: "register",
         values: values,

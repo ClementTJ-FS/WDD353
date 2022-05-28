@@ -98,12 +98,11 @@ router.post("/register", async (req, res) => {
     errors.bioMsg = "A bio is required. (Minimum 10 characters)";
   }
 
+  //check for errors
   const isEmpty = Object.keys(errors).length === 0;
   if (isEmpty) {
     values = {};
-    consent = "";
-    gender = "";
-    bio = "";
+    //if valid, send to db
     await postRegister(data)
       .then((result) => {
         res.status(200).json({

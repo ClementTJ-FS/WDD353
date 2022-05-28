@@ -23,6 +23,7 @@ app.use((req, res, next) => {
   next();
 });
 
+//the router
 app.use("/", router);
 
 //error handling middleware

@@ -16,6 +16,9 @@ Assignments include a registration backend and a registration system that includ
 - Added validation to registration backend.
 - Connected frontend to backend.
 - Added error/status messages to view.
+- Fixed home page bg image.
+- Added some comments. 
+- Removed some unused code.
 
 ## Week 3 - 
 This week we learn about dynamic websites, EJS, Sync/Async, and login/registration forms and validation.

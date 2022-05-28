@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 const Register = require("../api/models/register");
 
+//function to save data to db
 const postRegister = async (data) => {
-  
   const register = new Register({
     _id: mongoose.Types.ObjectId(),
     fName: data.values.fName,
